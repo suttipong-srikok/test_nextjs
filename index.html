@@ -2,20 +2,26 @@
 <html>
     <body>      
         <script type="text/javascript">
-            function myFunc(theObject) {
-                theObject.make = 'Toyota';
+            const square = function(number) { return number * number }
+            var x = square(4); // x gets the value 16
+            console.log(x)
+
+            const factorial = function fac(n) { return n < 2 ? 1 : n * fac(n-1) }
+            console.log(factorial(3))
+
+            function map(f, a) {
+                let result = []; // Create a new Array
+                let i; // Declare variable
+                for (i = 0; i != a.length; i++)
+                    result[i] = f(a[i]);
+                return result;
             }
-
-            var mycar = {make: 'Honda', model: 'Accord', year: 1998};
-            var x, y;
-
-            x = mycar.make; // x gets the value "Honda"
-
-            myFunc(mycar);
-            y = mycar.make; // y gets the value "Toyota"
-                            // (the make property was changed by the function)
-            
-            console.log(y);
+            const f = function(x) {
+                return x * x * x;
+            }
+            let numbers = [0, 1, 2, 5, 10];
+            let cube = map(f, numbers);
+            console.log(cube);
             
         </script>
     </body>

@@ -2,15 +2,32 @@
 <html>
     <body>
         <script type="text/javascript">
-            const materials = [
-                'Hydrogen',
-                'Helium',
-                'Lithium',
-                'Beryllium'
-            ];
+            // Traditional Anonymous Function
+            var x = function (a){
+                return a + 100;
+            };
 
-            console.log(materials.map(material => material.length));
-            // expected output: Array [8, 6, 7, 9]
+            console.log(x(3));
+
+            // Arrow Function Break Down
+
+            // 1. Remove the word "function" and place arrow between the argument and opening body bracket
+            (a) => {
+                return a + 100;
+            }
+
+            // 2. Remove the body braces and word "return" -- the return is implied.
+            (a) => a + 100;
+
+            // 3. Remove the argument parentheses
+            a => a + 100;
+            
+            //-----------------------------------
+
+            // Example
+            var b = c => c + 5;
+            console.log(b(10));
+
         </script>
     </body>
 </html>

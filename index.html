@@ -3,30 +3,23 @@
     <body>
         <script type="text/javascript">
             // Traditional Anonymous Function
-            (function (a, b) {
-                return a + b + 100;
-            });
+            var x = function (a, b){
+                let chuck = 42;
+                return a + b + chuck;
+            };
 
             // Arrow Function
-            (a, b) => a + b + 100;
+            (a, b) => {
+                let chuck = 42;
+                return a + b + chuck;
+            }
 
-            // Traditional Anonymous Function (no arguments)
-            let a = 4;
-            let b = 2;
-            var z = function () {
-                return a + b + 100;
-            };
-            console.log(z());
-
-            // Arrow Function (no arguments)
-            let c = 19;
-            let d = 7;
-            var y = () => c + d + 10;
-            console.log(y());
-
-            
-            let show = () => console.log('Anonymous function');
-            show();
+            // Example
+            var y = (a, b) => {
+                let chuck = 42;
+                return a + b + chuck;
+            }
+            console.log(y(3, 8));
 
         </script>
     </body>

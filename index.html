@@ -2,25 +2,16 @@
 <html>
     <body>
         <script type="text/javascript">
-            // Traditional Anonymous Function
-            var x = function (a, b){
-                let chuck = 42;
-                return a + b + chuck;
-            };
+            // Traditional Function
+            function bob (a){
+                return a + 100;
+            }
 
             // Arrow Function
-            (a, b) => {
-                let chuck = 42;
-                return a + b + chuck;
-            }
+            let aoa = a => a + 100;
 
-            // Example
-            var y = (a, b) => {
-                let chuck = 42;
-                return a + b + chuck;
-            }
-            console.log(y(3, 8));
-
+            console.log(aoa(99));
+            
         </script>
     </body>
 </html>

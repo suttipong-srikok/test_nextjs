@@ -3,30 +3,30 @@
     <body>
         <script type="text/javascript">
             // Traditional Anonymous Function
-            var x = function (a){
-                return a + 100;
+            (function (a, b) {
+                return a + b + 100;
+            });
+
+            // Arrow Function
+            (a, b) => a + b + 100;
+
+            // Traditional Anonymous Function (no arguments)
+            let a = 4;
+            let b = 2;
+            var z = function () {
+                return a + b + 100;
             };
+            console.log(z());
 
-            console.log(x(3));
+            // Arrow Function (no arguments)
+            let c = 19;
+            let d = 7;
+            var y = () => c + d + 10;
+            console.log(y());
 
-            // Arrow Function Break Down
-
-            // 1. Remove the word "function" and place arrow between the argument and opening body bracket
-            (a) => {
-                return a + 100;
-            }
-
-            // 2. Remove the body braces and word "return" -- the return is implied.
-            (a) => a + 100;
-
-            // 3. Remove the argument parentheses
-            a => a + 100;
             
-            //-----------------------------------
-
-            // Example
-            var b = c => c + 5;
-            console.log(b(10));
+            let show = () => console.log('Anonymous function');
+            show();
 
         </script>
     </body>

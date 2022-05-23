@@ -1,26 +1,32 @@
- const inventory = [
-    { name: 'asparagus', type: 'vegetables' },
-    { name: 'bananas',  type: 'fruit' },
-    { name: 'goat', type: 'meat' },
-    { name: 'cherries', type: 'fruit' },
-    { name: 'fish', type: 'meat' }
-  ];
+const board = [
+    ['R','N','B','Q','K','B','N','R'],
+    ['P','P','P','P','P','P','P','P'],
+    [' ',' ',' ',' ',' ',' ',' ',' '],
+    [' ',' ',' ',' ',' ',' ',' ',' '],
+    [' ',' ',' ',' ',' ',' ',' ',' '],
+    [' ',' ',' ',' ',' ',' ',' ',' '],
+    ['p','p','p','p','p','p','p','p'],
+    ['r','n','b','q','k','b','n','r'] ];
 
-  //let result = inventory.groupBy( ({ type }) => type ); // Firefox only
-  let result = inventory.reduce((key, value) => {
-      // Group initialization
-      if (!key[value.type]) {
-          key[value.type] = [];
-      }
+console.log(board.join('\n') + '\n\n');
+// R,N,B,Q,K,B,N,R
+// P,P,P,P,P,P,P,P
+//  , , , , , , , 
+//  , , , , , , , 
+//  , , , , , , , 
+//  , , , , , , , 
+// p,p,p,p,p,p,p,p
+// r,n,b,q,k,b,n,r
 
-      // Grouping
-      key[value.type].push(value);
-
-      return key;
-  }, {});
-
-  console.log(result.vegetables);
-  // [{name: 'asparagus', type: 'vegetables'}]
-
-  //Ref: https://www.robinwieruch.de/javascript-groupby/
-  
+// Move King's Pawn forward 2
+board[4][4] = board[6][4];
+board[6][4] = ' ';
+console.log(board.join('\n'));
+// R,N,B,Q,K,B,N,R
+// P,P,P,P,P,P,P,P
+//  , , , , , , , 
+//  , , , , , , , 
+//  , , , ,p, , , 
+//  , , , , , , , 
+// p,p,p,p, ,p,p,p
+// r,n,b,q,k,b,n,r

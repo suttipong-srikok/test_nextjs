@@ -1,4 +1,5 @@
-const fruits = ['Apple', 'Banana', 'Orange'];
-const removedItem = fruits.pop();
+const fruits = ['Apple', 'Banana', 'Strawberry', 'Mango', 'Cherry'];
+const start = -3;
+const removedItems = fruits.splice(start);
 console.log(fruits); // ['Apple', 'Banana']
-console.log(removedItem); // Orange
+console.log(removedItems); // ['Strawberry', 'Mango', 'Cherry']

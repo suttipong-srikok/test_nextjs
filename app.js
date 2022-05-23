@@ -1,4 +1,6 @@
-const fruits = ['Banana', 'Mango'];
-const newLength = fruits.unshift('Strawberry');
-console.log(fruits); // ['Strawberry', 'Banana', 'Mango']
-console.log(newLength); // 3
+const fruits = ['Strawberry', 'Banana', 'Mango'];
+const start = fruits.indexOf('Banana');
+const deleteCount = 1;
+const removedItems = fruits.splice(start, deleteCount);
+console.log(fruits); // ['Strawberry', 'Mango']
+console.log(removedItems); // ['Banana']

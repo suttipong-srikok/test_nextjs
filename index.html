@@ -9,16 +9,38 @@
         <script type="text/jsx">
             const app = document.getElementById('app');
 
-            function Header() {
-                return (<h1>Develop, Preview. Ship. XXX</h1>)
+            function createTitle(title) {
+                if (title) {
+                    return title;
+                } else {
+                    return 'Default title';
+                }
+            }
+
+            function Header({ title }) {
+                return <h1>{title ? title : 'Default Title'}</h1>;
+            }
+
+            function Page() {
+                return (
+                    <div>
+                        <Header title="React 사랑해" />
+                        <Header title="A new title" />
+                    </div>
+                );
             }
 
             function HomePage() {
+                const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamiton'];
                 return (
                     <div>
-                        {/* Nesting the Header component */}
-                        <Header />
-                    </div>
+                        <Header title="React 사랑해" />
+                        <ul>
+                            {names.map((name) => (
+                                <li key={name}>{name}</li>
+                            ))}
+                        </ul>
+                    </div>                    
                 );
             }
 

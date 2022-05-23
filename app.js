@@ -1,11 +1,13 @@
-const fruits = ['Apple', 'Banana', 'Strawberry'];
-const moreFruits  = ['Mango', 'Cherry']
-const combinedFruits = fruits.concat(moreFruits);
-console.log(combinedFruits); 
-// ['Apple', 'Banana', 'Strawberry', 'Mango', 'Cherry']
+const fruits = ['Strawberry', 'Mango'];
 
-console.log(fruits);
-// ['Apple', 'Banana', 'Strawberry']
+// Create a copy using spread syntax
+const fruitsCopy = [...fruits];
+console.log(fruitsCopy); // ['Strawberry', 'Mango']
 
-console.log(moreFruits);
-// ['Mango', 'Cherry']
+// Create a copy using the from() method.
+const fruitsCopy2 = Array.from(fruits);
+console.log(fruitsCopy2); // ['Strawberry', 'Mango']
+
+// Create a copy using the slice() method.
+const fruitsCopy3 = fruits.slice();
+console.log(fruitsCopy3); // ['Strawberry', 'Mango']

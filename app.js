@@ -1,4 +1,4 @@
-const fruits = ['Apple', 'Banana'];
-const newLength = fruits.push('Orange');
-console.log(fruits); // ["Apple", "Banana", "Orange"]
-console.log(newLength); // 3
+const fruits = ['Apple', 'Banana', 'Orange'];
+const removedItem = fruits.pop();
+console.log(fruits); // ['Apple', 'Banana']
+console.log(removedItem); // Orange

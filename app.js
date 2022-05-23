@@ -1,13 +1,26 @@
-const fruits = ['Strawberry', 'Mango'];
+ const inventory = [
+    { name: 'asparagus', type: 'vegetables' },
+    { name: 'bananas',  type: 'fruit' },
+    { name: 'goat', type: 'meat' },
+    { name: 'cherries', type: 'fruit' },
+    { name: 'fish', type: 'meat' }
+  ];
 
-// Create a copy using spread syntax
-const fruitsCopy = [...fruits];
-console.log(fruitsCopy); // ['Strawberry', 'Mango']
+  //let result = inventory.groupBy( ({ type }) => type ); // Firefox only
+  let result = inventory.reduce((key, value) => {
+      // Group initialization
+      if (!key[value.type]) {
+          key[value.type] = [];
+      }
 
-// Create a copy using the from() method.
-const fruitsCopy2 = Array.from(fruits);
-console.log(fruitsCopy2); // ['Strawberry', 'Mango']
+      // Grouping
+      key[value.type].push(value);
 
-// Create a copy using the slice() method.
-const fruitsCopy3 = fruits.slice();
-console.log(fruitsCopy3); // ['Strawberry', 'Mango']
+      return key;
+  }, {});
+
+  console.log(result.vegetables);
+  // [{name: 'asparagus', type: 'vegetables'}]
+
+  //Ref: https://www.robinwieruch.de/javascript-groupby/
+  
